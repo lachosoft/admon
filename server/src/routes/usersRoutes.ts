@@ -1,5 +1,7 @@
 import { Router } from 'express'
 
+import { usersControllers } from '../controllers/usersControllers';
+
 class UsersRoute{
 
     public router: Router = Router();
@@ -9,7 +11,7 @@ class UsersRoute{
     }
 
     config(): void{
-        this.router.get('/', (req,res) => res.send('USERS'));
+        this.router.get('/', usersControllers.index);
     }
 
 }

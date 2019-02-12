@@ -1,8 +1,11 @@
 import { Request, Response }from 'express';
 
+import pool from '../database'; 
+
 class UsersControllers {
     public index (req: Request, res: Response){
-        res.send('Users');
+        pool.query('DESCRIBE tbusers');
+        res.json('Users');
     }
 }
 
