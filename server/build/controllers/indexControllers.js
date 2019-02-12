@@ -4,7 +4,7 @@ var IndexControllers = /** @class */ (function () {
     function IndexControllers() {
     }
     IndexControllers.prototype.index = function (req, res) {
-        res.send();
+        res.send('Hello');
     };
     return IndexControllers;
 }());
