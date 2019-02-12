@@ -8,7 +8,11 @@ var UsersRoute = /** @class */ (function () {
         this.config();
     }
     UsersRoute.prototype.config = function () {
-        this.router.get('/', usersControllers_1.usersControllers.index);
+        this.router.get('/', usersControllers_1.usersControllers.list);
+        this.router.get('/', usersControllers_1.usersControllers.getOne);
+        this.router.post('/', usersControllers_1.usersControllers.create);
+        this.router.put('/:id', usersControllers_1.usersControllers.update);
+        this.router.delete('/:id', usersControllers_1.usersControllers.delete);
     };
     return UsersRoute;
 }());

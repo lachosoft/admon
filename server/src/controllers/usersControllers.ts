@@ -1,11 +1,26 @@
 import { Request, Response }from 'express';
 
-import pool from '../database'; 
+import db from '../database'; 
 
 class UsersControllers {
-    public index (req: Request, res: Response){
-        pool.query('DESCRIBE tbusers');
-        res.json('Users');
+    public list (req: Request, res: Response){
+        res.json('All Users');
+    }
+
+    public getOne(req: Request, res: Response){
+        res.json({text: 'Get a User / Id: '+ req.params.id})
+    }
+
+    public create(req:Request, res: Response){
+        res.json({text:'Create a User'});
+    }
+
+    public update(req: Request, res: Response){
+        res.json({text: 'Update a User / Id: '+ req.params.id});
+    }
+
+    public delete(req:Request, res: Response){
+        res.json({text: 'Delete a User / Id: '+ req.params.id});
     }
 }
 

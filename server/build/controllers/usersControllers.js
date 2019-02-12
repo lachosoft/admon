@@ -1,15 +1,22 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var database_1 = __importDefault(require("../database"));
 var UsersControllers = /** @class */ (function () {
     function UsersControllers() {
     }
-    UsersControllers.prototype.index = function (req, res) {
-        database_1.default.query('DESCRIBE tbusers');
-        res.json('Users');
+    UsersControllers.prototype.list = function (req, res) {
+        res.json('All Users');
+    };
+    UsersControllers.prototype.getOne = function (req, res) {
+        res.json({ text: 'Get a User / Id: ' + req.params.id });
+    };
+    UsersControllers.prototype.create = function (req, res) {
+        res.json({ text: 'Create a User' });
+    };
+    UsersControllers.prototype.update = function (req, res) {
+        res.json({ text: 'Update a User / Id: ' + req.params.id });
+    };
+    UsersControllers.prototype.delete = function (req, res) {
+        res.json({ text: 'Delete a User / Id: ' + req.params.id });
     };
     return UsersControllers;
 }());

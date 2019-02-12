@@ -9,3 +9,4 @@ pool.getConnection().then(connection => {
     console.log('DB is connected');
 });
 
+export default pool;

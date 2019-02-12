@@ -10,3 +10,4 @@ pool.getConnection().then(function (connection) {
     pool.releaseConnection(connection);
     console.log('DB is connected');
 });
+exports.default = pool;
