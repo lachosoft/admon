@@ -1,2 +1,2 @@
 "use strict";
-console.log('Server funciona bien');
+Object.defineProperty(exports, "__esModule", { value: true });
