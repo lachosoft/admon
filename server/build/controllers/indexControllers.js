@@ -8,3 +8,4 @@ var IndexControllers = /** @class */ (function () {
     };
     return IndexControllers;
 }());
+exports.indexControllers = new IndexControllers();

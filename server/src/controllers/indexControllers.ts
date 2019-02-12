@@ -1,7 +1,9 @@
 import { Request, Response }from 'express';
 
 class IndexControllers {
-    index (req: Request, res: Response){
+    public index (req: Request, res: Response){
         res.send()
     }
 }
+
+export const indexControllers = new IndexControllers();
