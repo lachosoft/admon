@@ -1,7 +1,2 @@
 "use strict";
-console.log('WORK');
-console.log('WORK');
-console.log('WORK');
-console.log('WORK');
-console.log('WORK');
-console.log('WORK');
+console.log('Server funciona bien');
