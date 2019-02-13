@@ -9,7 +9,7 @@ var UsersRoute = /** @class */ (function () {
     }
     UsersRoute.prototype.config = function () {
         this.router.get('/', usersControllers_1.usersControllers.list);
-        this.router.get('/', usersControllers_1.usersControllers.getOne);
+        this.router.get('/:id', usersControllers_1.usersControllers.getOne);
         this.router.post('/', usersControllers_1.usersControllers.create);
         this.router.put('/:id', usersControllers_1.usersControllers.update);
         this.router.delete('/:id', usersControllers_1.usersControllers.delete);
