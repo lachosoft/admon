@@ -17,4 +17,8 @@ export class UsersService {
   getUser(id: string){
     return this.http.get('${this.API_URI}/users/${id}');
   }
+
+  saveUser(){
+    
+  }
 }
