@@ -7,6 +7,8 @@ import { NavegationComponent } from './components/navegation/navegation.componen
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 
+import {UsersService} from './services/users.service'
+
 @NgModule({
   declarations: [
     AppComponent,
