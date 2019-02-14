@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient} from '@angular/common/http';
+
+import {User} from '../modules/User';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  API_URI = 'localhost:300/API';
+  API_URI = 'localhost:3000/API';
 
   constructor(private http: HttpClient) {   }
 
@@ -18,7 +20,15 @@ export class UsersService {
     return this.http.get('${this.API_URI}/users/${id}');
   }
 
-  saveUser(){
-    
+  updateUser(id: string, user: User){
+    return this.http.put('${this.API_URI}/users/${id}',user);
+  }
+
+  deleteUser(id: string){
+    return this.http.delete('${API_URI}/users/${id}');
+  }
+
+  saveUser(user : User){
+    return this.http.post('${this.AP_URI/users}',user);
   }
 }
