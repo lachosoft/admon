@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {UsersService} from '../../services/users.service';
+import {User} from '../../modules/User'
 /*import { ConsoleReporter } from 'jasmine';*/
 
 @Component({
@@ -10,13 +11,17 @@ import {UsersService} from '../../services/users.service';
 })
 export class UserListComponent implements OnInit {
 
+  users: any = [];
+
   constructor(private usersService: UsersService) { 
 
   }
 
   ngOnInit() {
     this.usersService.getUsers().subscribe(
-      res=> console.log(res),
+      res=> {
+        this.users = res;
+      },
       err=> console.log(err)
     );
   }
