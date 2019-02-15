@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import {UsersService} from '../../services/users.service';
+/*import { ConsoleReporter } from 'jasmine';*/
+
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private usersService: UsersService) { 
+
+  }
 
   ngOnInit() {
+    this.usersService.getUsers().subscribe(
+      res=> console.log(res),
+      err=> console.log(err)
+    );
   }
 
 }

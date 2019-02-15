@@ -9,27 +9,28 @@ import { Observable } from 'rxjs';
 })
 export class UsersService {
 
-  API_URI = 'localhost:3000/API';
+  API_URI = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient) {   }
 
   getUsers(){
-    return this.http.get('${this.API_URI}/users');
+    //{this.API_URI}
+    return this.http.get(`${this.API_URI}/users`);
   }
 
   getUser(id: string){
-    return this.http.get('${this.API_URI}/users/${id}');
+    return this.http.get(`${this.API_URI}/users/${id}`);
   }
 
   updateUser(id: string, user: User): Observable<User> {
-    return this.http.put('${this.API_URI}/users/${id}',user);
+    return this.http.put(`${this.API_URI}/users/${id}`,user);
   }
 
   deleteUser(id: string){
-    return this.http.delete('${API_URI}/users/${id}');
+    return this.http.delete(`${this.API_URI}/users/${id}`);
   }
 
   saveUser(user : User){
-    return this.http.post('${this.AP_URI/users}',user);
+    return this.http.post(`${this.API_URI}/users`,user);
   }
 }
