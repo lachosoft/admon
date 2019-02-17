@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 
 import {UsersService} from '../../services/users.service';
 import {User} from '../../modules/User'
@@ -13,6 +13,8 @@ export class UserListComponent implements OnInit {
 
   users: any = [];
 
+  @HostBinding("class")  clases ="row";
+  
   constructor(private usersService: UsersService) { 
 
   }

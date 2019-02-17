@@ -2,6 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { User } from '../../modules/User';
 
 import {UsersService} from '../../services/users.service'
+import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-user-form',
@@ -35,6 +36,19 @@ export class UserFormComponent implements OnInit {
 
   saveUser()
   {
+    delete this.usr.idUsr;
+    delete this.usr.deletedby;
+    delete this.usr.deletedon;
+    delete this.usr.createdon;
+    
+    this.userService.saveUser(this.usr)
+      .subscribe(
+        res =>{
+          console.log(res);
+        },
+        err => console.log(err)
+      )
+    
     console.log(this.usr);
   }
 

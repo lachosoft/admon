@@ -30,7 +30,7 @@ export class UsersService {
     return this.http.delete(`${this.API_URI}/users/${id}`);
   }
 
-  saveUser(user : User){
+  saveUser(user : User): Observable <User>{
     return this.http.post(`${this.API_URI}/users`,user);
   }
 }

@@ -1,4 +1,5 @@
-<div class="card bg-secundary mb-3" style="max-width: 20rem;" *ngFor="let user of users">
+<div class="card-columns">
+<div class="card bg-secundary mb-3 ml-4" style="max-width:18rem;" *ngFor="let user of users">
     <div class="card-header d-flex justify-content-between aling-items-center ">
       <img src="../../../assets/usuario.png" style="width:32px" class="card-img-top" alt="">
       {{user.nick}}
@@ -7,10 +8,13 @@
       </button>
     </div>
     <div class="card-body">
-      <h6 class="card-title">{{user.nombres}} {{user.appaterno}} {{user.apmaterno}}</h6>
+      <h6 class="card-title">
+        ( <strong>Id: {{user.Id}}</strong> ) {{user.nombres}} {{user.appaterno}} {{user.apmaterno}}
+      </h6>
       <p class="card-text">
         Email: {{user.email}}
       </p>
       <a href="#" class="btn btn-warning btn-block">Editar</a>
     </div>
   </div> 
+</div>

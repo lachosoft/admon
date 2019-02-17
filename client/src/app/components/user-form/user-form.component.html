@@ -1,4 +1,4 @@
-<div class="col-md-4 offset-md-4">
+<div class="col-md-4 offset-md-2">
   <div class="card">
     <div class="card-title">
       Usuario
@@ -25,5 +25,16 @@
         </button>
       </form>
     </div>
+  </div>
+</div>
+<div class="col-md-4">
+  <div class="card card-body text-center">
+    <h6>(Id {{usr.Id}}) - {{usr.nick==""?'Nick':usr.nick}} </h6>
+    <p class="text-left">
+      <span class="text-right">Nombre:</span> {{usr.nombres}} {{usr.appaterno}} {{usr.apmaterno}}
+      <br>
+      <span class="text-right">Email: </span>  {{usr.email =="" ? 'Correo del Usuario': usr.email}}
+  </p>
+  <span class="text-left"> Creado: {{usr.createdon | date: "yyyy-MM-dd"}} </span>
   </div>
 </div>
