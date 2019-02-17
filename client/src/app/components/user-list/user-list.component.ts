@@ -20,12 +20,32 @@ export class UserListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getListUsers();
+  }
+
+  getListUsers(){
     this.usersService.getUsers().subscribe(
       res=> {
         this.users = res;
       },
       err=> console.log(err)
     );
+  }
+
+  deleteUser(id: string){
+    console.log(id);
+    this.usersService.deleteUser(id)
+    .subscribe(
+      res =>{
+        console.log(res);
+        this.getListUsers();
+      },
+      err => console.error(err)
+    )
+  }
+
+  editUser(id: string){
+    console.log(id);
   }
 
 }

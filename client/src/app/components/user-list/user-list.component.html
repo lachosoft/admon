@@ -3,7 +3,7 @@
     <div class="card-header d-flex justify-content-between aling-items-center ">
       <img src="../../../assets/usuario.png" style="width:32px" class="card-img-top" alt="">
       {{user.nick}}
-      <button class="btn btn-danger" (click)="deleteUser(usr.Id)">
+      <button class="btn btn-danger" (click)="deleteUser(user.Id)">
         <i class="far fa-trash-alt"></i>
       </button>
     </div>
@@ -14,7 +14,7 @@
       <p class="card-text">
         Email: {{user.email}}
       </p>
-      <a href="#" class="btn btn-warning btn-block">Editar</a>
+      <a [routerLink]="[/edit/user.Id]" class="btn btn-warning btn-block">Editar</a>
     </div>
   </div> 
 </div>

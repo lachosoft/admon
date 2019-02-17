@@ -1,5 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { User } from '../../modules/User';
+import {Router} from '@angular/router'
 
 import {UsersService} from '../../services/users.service'
 import { Subscriber } from 'rxjs';
@@ -27,12 +28,14 @@ export class UserFormComponent implements OnInit {
 	  createdby : 0
   };
 
-  constructor(private userService : UsersService) {
+  constructor(private userService : UsersService, private router: Router) {
     
   }
 
   ngOnInit() {
   }
+
+  
 
   saveUser()
   {
@@ -45,6 +48,7 @@ export class UserFormComponent implements OnInit {
       .subscribe(
         res =>{
           console.log(res);
+          this.router.navigate(['/users']);
         },
         err => console.log(err)
       )
