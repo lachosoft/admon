@@ -1,14 +1,13 @@
 <div class="card bg-secundary mb-3" style="max-width: 20rem;" *ngFor="let user of users">
-    <div class="card-header d-flex justify-content-between aling-items-center">
-      Nick: {{user.nick}}
+    <div class="card-header d-flex justify-content-between aling-items-center ">
+      <img src="../../../assets/usuario.png" style="width:32px" class="card-img-top" alt="">
+      {{user.nick}}
       <button class="btn btn-danger">
         <i class="far fa-trash-alt"></i>
       </button>
     </div>
     <div class="card-body">
-      <img src="https://sistemas.com/termino/wp-content/uploads/Usuario-Icono.jpg" width="100" height="100" class="rounded-circle" alt="">
-      <br>
-      <h6 class="card-title">Nombre: {{user.nombres}} {{user.appaterno}} {{user.apmaterno}}</h6>
+      <h6 class="card-title">{{user.nombres}} {{user.appaterno}} {{user.apmaterno}}</h6>
       <p class="card-text">
         Email: {{user.email}}
       </p>
