@@ -20,7 +20,7 @@
         <div class="form-group">
             <input type="text" name="email" [(ngModel)]="usr.email"  placeholder="Email" class="form-control">
         </div>
-        <button class="btn btn-sucess btn-block" (click)="saveUser()" >
+        <button class="btn btn-sucess btn-block" (click)="EsEditable ? updateUser() : saveUser()" >
           Guardar
         </button>
       </form>

@@ -1,6 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { User } from '../../modules/User';
-import {Router} from '@angular/router'
+import { ActivatedRoute ,Router} from '@angular/router'
 
 import {UsersService} from '../../services/users.service'
 import { Subscriber } from 'rxjs';
@@ -28,11 +28,25 @@ export class UserFormComponent implements OnInit {
 	  createdby : 0
   };
 
-  constructor(private userService : UsersService, private router: Router) {
+  EsEditable = false;
+  constructor(private userService : UsersService, private router: Router, private activatedRouter: ActivatedRoute) {
     
   }
 
   ngOnInit() {
+    const params = this.activatedRouter.snapshot.params;
+    console.log(params);
+    if(params.id){
+      this.userService.getUser(params.id)
+        .subscribe(
+          res =>{ 
+            console.log(res);
+            this.usr = res;
+            this.EsEditable= true;
+          },
+          err => console.log(err)
+          )
+    }
   }
 
   
