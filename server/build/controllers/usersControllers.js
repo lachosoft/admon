@@ -63,7 +63,7 @@ var UsersControllers = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         id = req.params.id;
-                        return [4 /*yield*/, database_1.default.query('select idUsr as Id, nick, nombres, appaterno, apmaterno, email from tbusers where deleted=0 and  idUsr = ?', [id])];
+                        return [4 /*yield*/, database_1.default.query('select idUsr, nick, nombres, appaterno, apmaterno, email from tbusers where deleted=0 and  idUsr = ?', [id])];
                     case 1:
                         Users = _a.sent();
                         if (Users.length > 0) {

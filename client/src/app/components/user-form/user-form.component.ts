@@ -14,7 +14,7 @@ export class UserFormComponent implements OnInit {
 
   @HostBinding('class') clasese = "row";
 
-  usr: User = {
+  usr: any = {
     idUsr : 0,
     nick : ``,
 	  nombres : ``,
@@ -68,6 +68,18 @@ export class UserFormComponent implements OnInit {
       )
     
     console.log(this.usr);
+  }
+
+  updateUser(){
+    this.userService.updateUser(this.usr.idUsr,this.usr)
+      .subscribe(
+        res =>{
+          console.log(res);
+          this.router.navigate(['/users']);
+        },
+        err => console.log(err)
+      )
+    //this.router.navigate(['/users']);
   }
 
 }
