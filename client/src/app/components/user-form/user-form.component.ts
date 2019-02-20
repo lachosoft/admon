@@ -71,6 +71,10 @@ export class UserFormComponent implements OnInit {
   }
 
   updateUser(){
+    delete this.usr.idUsr;
+    delete this.usr.deletedby;
+    delete this.usr.deletedon;
+    delete this.usr.createdon;
     this.userService.updateUser(this.usr.idUsr,this.usr)
       .subscribe(
         res =>{
