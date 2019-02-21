@@ -71,7 +71,7 @@ export class UserFormComponent implements OnInit {
   }
 
   updateUser(){
-    delete this.usr.idUsr;
+    //delete this.usr.idUsr;
     delete this.usr.deletedby;
     delete this.usr.deletedon;
     delete this.usr.createdon;
@@ -83,7 +83,6 @@ export class UserFormComponent implements OnInit {
         },
         err => console.log(err)
       )
-    //this.router.navigate(['/users']);
   }
 
 }

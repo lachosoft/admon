@@ -1,4 +1,5 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
+import { Router } from '@angular/router'
 
 import {UsersService} from '../../services/users.service';
 import {User} from '../../modules/User'
@@ -15,7 +16,7 @@ export class UserListComponent implements OnInit {
 
   @HostBinding("class")  clases ="row";
   
-  constructor(private usersService: UsersService) { 
+  constructor(private usersService: UsersService, private router: Router) { 
 
   }
 
@@ -33,12 +34,13 @@ export class UserListComponent implements OnInit {
   }
 
   deleteUser(id: string){
-    console.log(id);
     this.usersService.deleteUser(id)
     .subscribe(
       res =>{
         console.log(res);
         this.getListUsers();
+        //this.router.navigate(['users/']);
+
       },
       err => console.error(err)
     )
